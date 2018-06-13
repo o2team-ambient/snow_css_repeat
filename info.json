@@ -1,7 +1,8 @@
 {
   "author": "<%= author %>",
-  "demo_url": "<%= demoUrl %>",
+  "demoUrl": "<%= demoUrl %>",
   "title": "<%= appName %>",
   "github": "<%= github %>",
-  "demo_snippet": "{{__snippet__}}"
+  "demoSnippet": "{{__snippet__}}",
+  "configUrl": ""
 }
