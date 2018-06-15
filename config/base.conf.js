@@ -6,9 +6,9 @@ const PWD = process.env.PWD || process.cwd()
 
 let conf = {
   entry: {
-    bundle: [PWD + "/demo/src/index.js"],
     config: [PWD + "/demo/src/config.js"],
-    control: [PWD + "/demo/src/control.js"]
+    control: [PWD + "/demo/src/control.js"],
+    bundle: [PWD + "/demo/src/index.js"]  
   },
   output: {
     path: PWD + "/demo/dist",
