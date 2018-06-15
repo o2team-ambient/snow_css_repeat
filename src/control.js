@@ -7,8 +7,8 @@ import {
   O2_AMBIENT_MAIN,
   O2_AMBIENT_CONFIG,
   O2_AMBIENT_INIT
-} from './utils/const'
-import { getParameterByName } from './utils/util'
+} from './js/utils/const'
+import { getParameterByName } from './js/utils/util'
 
 /* eslint-disable no-unused-vars */
 const isLoop = getParameterByName('loop')
