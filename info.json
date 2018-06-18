@@ -4,6 +4,6 @@
   "title": "<%= appName %>",
   "github": "<%= github %>",
   "demoSnippet": "{{__snippet__}}",
-  "controlUrl": "",
-  "configUrl": ""
+  "controlUrl": "{{__control__}}",
+  "configUrl": "{{__config__}}"
 }
