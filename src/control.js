@@ -32,7 +32,7 @@ let controlInit = () => {
       this.otherConfig = new OtherConfig()
       this.initBaseGUI()
       this.initTextureGUI()
-      Control.setBackgroundColor(this.otherConfig.backgroundColor)
+      isShowController && Control.setBackgroundColor(this.otherConfig.backgroundColor)
     }
 
     initBaseGUI () {
@@ -42,9 +42,10 @@ let controlInit = () => {
       gui.add(otherConfig, 'message').name('配置面板')
       gui.add(otherConfig, 'play').name('播放 / 暂停')
       config.particleNumber && gui.add(config, 'particleNumber', 3, 100, 1).name('粒子数量').onFinishChange(val => {
-        window[O2_AMBIENT_INIT]()
+        // window[O2_AMBIENT_INIT]()
+        this.resetCanvas()
       })
-      gui.addColor(otherConfig, 'backgroundColor').name('背景色(仅演示)').onFinishChange(val => {
+      isShowController && gui.addColor(otherConfig, 'backgroundColor').name('背景色(仅演示)').onFinishChange(val => {
         Control.setBackgroundColor(val)
       })
       this.gui = gui
@@ -58,7 +59,7 @@ let controlInit = () => {
       textures && Object.keys(textures).forEach((key, idx) => {
         const textureController = texturesFolder.add(textures, key).name(`纹理${idx + 1}`)
         textureController.onFinishChange(val => {
-          window[O2_AMBIENT_INIT] && window[O2_AMBIENT_INIT]()
+          this.resetCanvas()
         })
       })
       texturesFolder.open()
@@ -72,6 +73,10 @@ let controlInit = () => {
 
     static setBackgroundColor (color) {
       document.body.style.backgroundColor = color
+    }
+
+    resetCanvas () {
+      window[O2_AMBIENT_MAIN] && window[O2_AMBIENT_MAIN].reset && typeof window[O2_AMBIENT_MAIN].reset === 'function' && window[O2_AMBIENT_MAIN].reset()
     }
   }
 
