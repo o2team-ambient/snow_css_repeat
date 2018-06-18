@@ -10,11 +10,11 @@
     │   ├── base.scss
     │   └── package.scss
     ├── index.html
-    ├── index.js
+    ├── index.js            - 主入口文件
+    ├── config.js 		    - 控制板参数配置文件（单独打包）
+    ├── control.js		    - 控制板代码（单独打包）
     └── js
         ├── ambient.js
-        ├── config.js 		- 控制板参数配置文件（单独打包）
-        ├── control.js		- 控制板代码（单独打包）
         └── utils
             ├── const.js
             ├── raf.js
