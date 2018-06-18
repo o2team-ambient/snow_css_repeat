@@ -75,9 +75,13 @@ let controlInit = () => {
     }
   }
 
-  if (isShowController) {
-    /* eslint-disable no-new */
-    new Control()
+  /* eslint-disable no-new */
+  new Control()
+
+  if (!isShowController) {
+    let style = document.createElement('style')
+    style.innerHTML = '.dg.ac {visibility: hidden;}'
+    document.getElementsByTagName('head')[0].appendChild(style)
   }
 }
 
