@@ -31,6 +31,10 @@ class Controller {
       // demo 环境，监听 postmessage
       this.bindMsg()
     }
+
+    if (!this.isShowController && !this.isAmbientPlat) {
+      this.setControllerHide()
+    }
   }
 
   // 监听 postmessage
@@ -40,6 +44,13 @@ class Controller {
       window[O2_AMBIENT_CONFIG] = Object.assign(window[O2_AMBIENT_CONFIG], msg.data.data)
       this.resetCanvas()
     })
+  }
+
+  // 添加隐藏控制面板样式
+  setControllerHide () {
+    let style = document.createElement('style')
+    style.innerHTML = '.dg.ac {visibility: hidden;}'
+    document.getElementsByTagName('head')[0].appendChild(style)
   }
 
   // 设置控制板层级
