@@ -5,15 +5,13 @@
 import dat from 'dat.gui'
 import {
   O2_AMBIENT_MAIN,
-  // O2_AMBIENT_INIT,
   O2_AMBIENT_CONFIG
 } from './js/utils/const'
+import Controller from './js/utils/controller'
 import { getParameterByName } from './js/utils/util'
 
 /* eslint-disable no-unused-vars */
-const isLoop = getParameterByName('loop') // 非循环动画是否循环播放
-const isShowController = getParameterByName('controller') // 是否展示控制面板参数
-const isAmbientPlat = getParameterByName('platform') === '1' // 是否平台环境
+const isLoop = getParameterByName('loop')
 
 let controlInit = () => {
   // 非必要配置字段（仅用于展示，如背景颜色、启动/暂停）
@@ -28,34 +26,17 @@ let controlInit = () => {
     }
   }
 
-  class Control {
+  class Control extends Controller {
     constructor () {
-      this.config = window[O2_AMBIENT_CONFIG] || {}
+      super()
       this.otherConfig = new OtherConfig()
       this.initBaseGUI()
       this.initTextureGUI()
-      isShowController && Control.setBackgroundColor(this.otherConfig.backgroundColor)
-      if (isAmbientPlat) {
-        // 平台环境，获取 iframe dom
-        this.transferMonPC = document.getElementById('transferMon_pc')
-        this.transferMonM = document.getElementById('transferMon_m')
-      } else {
-        // demo 环境，监听 postmessage
-        this.bindMsg()
-      }
+      this.isShowController && !this.isAmbientPlat && this.setBackgroundColor(this.otherConfig.backgroundColor)
     }
 
-    // 监听 postmessage
-    bindMsg () {
-      window.addEventListener('message', (msg) => {
-        if (msg.data.type !== 'reset') return
-        window[O2_AMBIENT_CONFIG] = Object.assign(window[O2_AMBIENT_CONFIG], msg.data.data)
-        this.resetCanvas()
-      })
-    }
-
-    // 初始化控制板-基础部分
     initBaseGUI () {
+      // demo code
       const config = this.config
       const otherConfig = this.otherConfig
       const gui = new dat.GUI()
@@ -65,15 +46,16 @@ let controlInit = () => {
         // window[O2_AMBIENT_INIT]()
         this.resetCanvas()
       })
-      isShowController && gui.addColor(otherConfig, 'backgroundColor').name('背景色(仅演示)').onFinishChange(val => {
-        Control.setBackgroundColor(val)
+      this.isShowController && !this.isAmbientPlat && gui.addColor(otherConfig, 'backgroundColor').name('背景色(仅演示)').onFinishChange(val => {
+        this.setBackgroundColor(val)
       })
       this.gui = gui
+      // 设置控制面板层级
       this.setGUIzIndex(2)
     }
 
-    // 初始化控制板-输入框部分
     initTextureGUI () {
+      // demo code
       const gui = this.gui
       const textures = this.config.textures
       const texturesFolder = gui.addFolder('纹理')
@@ -87,47 +69,12 @@ let controlInit = () => {
 
       this.texturesFolder = texturesFolder
     }
-
-    // 设置控制板层级
-    setGUIzIndex (zIndex) {
-      this.gui.domElement.parentElement.style.zIndex = zIndex
-    }
-
-    // 设置页面背景色
-    static setBackgroundColor (color) {
-      document.body.style.backgroundColor = color
-    }
-
-    // 重置画布
-    resetCanvas () {
-      isAmbientPlat && this.transferProcess()
-      window[O2_AMBIENT_MAIN] && window[O2_AMBIENT_MAIN].reset && typeof window[O2_AMBIENT_MAIN].reset === 'function' && window[O2_AMBIENT_MAIN].reset()
-    }
-
-    // 传送数据
-    transMsg (dom) {
-      let transWin = dom.contentWindow
-      transWin.postMessage({type: 'reset', data: window[O2_AMBIENT_CONFIG]}, `${window.location.protocol}${dom.getAttribute('src')}`)
-    }
-
-    // iframe dom
-    transferProcess () {
-      if (!this.transferMonPC) {
-        this.transferMonPC = document.getElementById('transferMon_pc')
-      }
-      if (!this.transferMonM) {
-        this.transferMonM = document.getElementById('transferMon_m')
-      }
-
-      this.transferMonPC && this.transMsg(this.transferMonPC)
-      this.transferMonM && this.transMsg(this.transferMonM)
-    }
   }
 
   /* eslint-disable no-new */
   new Control()
 
-  if (!isShowController) {
+  if (!isShowController && !isAmbientPlat) {
     let style = document.createElement('style')
     style.innerHTML = '.dg.ac {visibility: hidden;}'
     document.getElementsByTagName('head')[0].appendChild(style)
