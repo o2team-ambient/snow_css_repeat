@@ -2,7 +2,7 @@
  * 控制面板初始化代码
  */
 
-import dat from 'dat.gui'
+import dat from '@o2team/ambient-dat.gui'
 import {
   O2_AMBIENT_MAIN
 } from './utils/const'
