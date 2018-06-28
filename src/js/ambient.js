@@ -19,7 +19,12 @@ function initAmbient () {
 window[O2_AMBIENT_INIT] = initAmbient
 
 try {
-  initAmbient()
+  // 保证配置读取顺序
+  let csi = setInterval(() => {
+    if (!window[O2_AMBIENT_CONFIG]) return
+    clearInterval(csi)
+    initAmbient()
+  }, 1000)
 } catch (e) {
   console.log(e) 
 }
