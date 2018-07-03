@@ -1,5 +1,5 @@
-const ID = 'DEMO'
-const id = 'demo'
+const id = '<%= appName %>'
+const ID = id.toUpperCase()
 
 export const O2_AMBIENT_MAIN = `O2_AMBIENT_${ID}_MAIN`
 export const O2_AMBIENT_INIT = `O2_AMBIENT_${ID}_INIT`

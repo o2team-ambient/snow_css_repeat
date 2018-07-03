@@ -1,7 +1,7 @@
 import './utils/raf'
 import {
   O2_AMBIENT_INIT,
-  O2_AMBIENT_MAIN
+  O2_AMBIENT_CONFIG
 } from './utils/const'
 
 const wrapper = document.querySelector('.o2team_ambient_main')
