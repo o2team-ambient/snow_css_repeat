@@ -4,11 +4,13 @@ import {
   O2_AMBIENT_CONFIG
 } from './utils/const'
 
+// 判断是否可点，被点中则隐藏
 const wrapper = document.querySelector('.o2team_ambient_main')
 wrapper.addEventListener('click', () => {
   wrapper.style.display = 'none'
 })
 
+// 初始化函数
 function initAmbient () {
   // let xxx = new XXX()
   // 主函数暴露
