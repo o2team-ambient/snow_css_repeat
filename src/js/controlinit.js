@@ -1,5 +1,6 @@
 /*
- * 控制面板初始化代码
+ * @desc 控制面板初始化代码
+ * 注：控制面板自定义代码
  */
 
 import dat from '@o2team/ambient-dat.gui'

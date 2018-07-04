@@ -1,5 +1,6 @@
 /*
- * 控制面板
+ * @desc 控制面板
+ * 注：通用代码，请勿在不知情的情况下进行修改
  */
 
 import controlInit from './js/controlinit'
