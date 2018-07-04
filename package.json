@@ -1,0 +1,15 @@
+{
+  "name": "stars_emmision",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "am s",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "chenxinyi",
+  "license": "ISC",
+  "dependencies": {
+    "@o2team/ambient-dat.gui": "^0.7.3"
+  }
+}

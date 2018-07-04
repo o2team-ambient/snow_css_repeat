@@ -1,5 +1,5 @@
-const ID = 'DEMO'
-const id = 'demo'
+const ID = 'starts_emmision'
+const id = 'starts_emmision'
 
 export const O2_AMBIENT_MAIN = `O2_AMBIENT_${ID}_MAIN`
 export const O2_AMBIENT_INIT = `O2_AMBIENT_${ID}_INIT`

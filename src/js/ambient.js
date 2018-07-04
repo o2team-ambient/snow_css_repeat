@@ -1,25 +1,21 @@
 import './utils/raf'
 import {
+  O2_AMBIENT_CONFIG,
   O2_AMBIENT_INIT,
   O2_AMBIENT_MAIN
 } from './utils/const'
-
-const wrapper = document.querySelector('.o2team_ambient_main')
-wrapper.addEventListener('click', () => {
-  wrapper.style.display = 'none'
-})
+import StartsEmmision from './components/stars_emmision'
 
 function initAmbient () {
-  // let xxx = new XXX()
-  // 主函数暴露
-  // window[O2_AMBIENT_MAIN] = xxx
+  const opts = window[O2_AMBIENT_CONFIG]
+  const startsEmmision = new StartsEmmision(opts)
+  window[O2_AMBIENT_MAIN] = startsEmmision
+  return startsEmmision
 }
 
-// 初始化函数
 window[O2_AMBIENT_INIT] = initAmbient
 
 try {
-  // 保证配置读取顺序
   let csi = setInterval(() => {
     if (!window[O2_AMBIENT_CONFIG]) return
     clearInterval(csi)
