@@ -1,5 +1,5 @@
 {
-  "name": "<%= appName %>",
+  "name": "stars_emmision",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,6 @@
   "author": "chenxinyi",
   "license": "ISC",
   "dependencies": {
-    "@o2team/ambient-dat.gui": "^0.7.3",
-    "dat.gui": "^0.7.1"
+    "@o2team/ambient-dat.gui": "^0.7.3"
   }
 }
