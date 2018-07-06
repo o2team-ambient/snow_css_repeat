@@ -41,6 +41,8 @@ let controlInit = () => {
       const config = this.config
       const otherConfig = this.otherConfig
       const gui = new dat.GUI()
+      gui.addCallbackFunc(this.resetCanvas.bind(this))
+      
       gui.add(otherConfig, 'message').name('配置面板')
       gui.add(otherConfig, 'play').name('播放 / 暂停')
       config.particleNumber && gui.add(config, 'particleNumber', 3, 100, 1).name('粒子数量').onFinishChange(val => {
