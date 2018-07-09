@@ -1,0 +1,66 @@
+
+$s--near: 10s;
+$s--mid: ($s--near * 2);
+$s--far: ($s--near * 3);
+
+$ease--out-quad: cubic-bezier(.25,.46,.450,.94);
+
+.o2_ambient_snow-css-repeat {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.o2_ambient_snow-css-repeat_item {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  animation: falling linear infinite both;
+  transform: translate(0,-100%);
+
+  &--near {
+    animation-duration: $s--near;
+    background-image: url('https://img12.360buyimg.com/ling/jfs/t19414/121/1987011065/870/6960a0dc/5adecfcaN2d52b4ee.png');
+    background-size: contain;
+
+    & + .snow--alt {
+      animation-delay: ($s--near / 2);
+    }
+  }
+
+  &--mid {
+    animation-duration: $s--mid;
+    background-image: url('https://img30.360buyimg.com/ling/jfs/t19411/304/1936420499/1623/7bfc160/5adecfcaN500a7b9c.png');
+    background-size: contain;
+
+    & + .snow--alt {
+      animation-delay: ($s--mid / 2);
+    }
+  }
+
+  &--far {
+    animation-duration: $s--far;
+    background-image: url('https://img10.360buyimg.com/ling/jfs/t17110/190/1926456314/1096/439f381e/5adecfcdN395410ad.png');
+    background-size: contain;
+
+    & + .snow--alt {
+      animation-delay: ($s--far / 2);
+    }
+  }
+}
+
+@keyframes falling {
+  0% {
+    transform: translate(-7.5%, -100%);
+  }
+
+  100% {
+    transform: translate(7.5%, 100%);
+  }
+}
