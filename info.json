@@ -1,10 +1,11 @@
 {
   "author": "liujianchao1",
   "demoUrl": "http://jdc.jd.com/demo/ambient/snow-css-repeat/",
+  "miniDemoUrl": "http://jdc.jd.com/demo/ambient/snow-css-repeat/index_demo.html",
   "title": "snow-css-repeat",
   "ambName": "雪花-简洁",
   "github": "https://github.com/o2team-ambient/snow-css-repeat",
-  "demoSnippet": "<link href=\"//storage.jd.com/ambient/styles-snow-css-repeat.css?t=1547713174000\" rel=\"stylesheet\"></link><!-- S 主体内容 -->\n  <div class=\"o2team_ambient_main\">\n  </div>\n  <!-- E 主体内容 --><script src=\"//storage.jd.com/ambient/bundle-snow-css-repeat.js?t=1547713174000\"></script>",
-  "controlUrl": "//storage.jd.com/ambient/control-snow-css-repeat.js?t=1547713174000",
-  "configUrl": "//storage.jd.com/ambient/config-snow-css-repeat.js?t=1547713174000"
+  "demoSnippet": "<link href=\"//storage.jd.com/ambient/styles-snow-css-repeat.css?t=1552469587000\" rel=\"stylesheet\"></link><!-- S 主体内容 -->\n  <div class=\"o2team_ambient_main\">\n  </div>\n  <!-- E 主体内容 --><script src=\"//storage.jd.com/ambient/bundle-snow-css-repeat.js?t=1552469587000\"></script>",
+  "controlUrl": "//storage.jd.com/ambient/control-snow-css-repeat.js?t=1552469587000",
+  "configUrl": "//storage.jd.com/ambient/config-snow-css-repeat.js?t=1552469587000"
 }
