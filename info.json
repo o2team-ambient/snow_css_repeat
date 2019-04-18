@@ -1,8 +1,8 @@
 {
   "author": "liujianchao1",
-  "demoUrl": "//o2team-ambient.github.io/snow-css-repeat/dist/",
-  "miniDemoUrl": "//o2team-ambient.github.io/snow-css-repeat/dist/index_demo.html",
-  "title": "snow-css-repeat",
+  "demoUrl": "//o2team-ambient.github.io/snow_css_repeat/dist/",
+  "miniDemoUrl": "//o2team-ambient.github.io/snow_css_repeat/dist/index_demo.html",
+  "title": "snow_css_repeat",
   "ambName": "雪花-简洁",
   "github": "https://github.com/o2team-ambient/snow-css-repeat",
   "demoSnippet": "<link href=\"//storage.jd.com/ambient/styles-snow-css-repeat.css?t=1552469587000\" rel=\"stylesheet\"></link><!-- S 主体内容 -->\n  <div class=\"o2team_ambient_main\">\n  </div>\n  <!-- E 主体内容 --><script src=\"//storage.jd.com/ambient/bundle-snow-css-repeat.js?t=1552469587000\"></script>",

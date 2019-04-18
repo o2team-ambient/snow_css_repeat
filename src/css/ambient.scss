@@ -15,7 +15,7 @@ $ease--out-quad: cubic-bezier(.25,.46,.450,.94);
   max-width: 100%;
   pointer-events: none;
   overflow: hidden;
-  z-index: -1;
+  z-index: 1;
 }
 
 .o2_ambient_snow-css-repeat_item {
