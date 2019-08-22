@@ -5,9 +5,9 @@
   "title": "snow_css_repeat",
   "ambName": "雪花-简洁",
   "github": "https://github.com/o2team-ambient/snow-css-repeat",
-  "demoSnippet": "<link href=\"//storage.jd.com/ambient/styles-snow_css_repeat.css?t=1565788103000\" rel=\"stylesheet\"></link><!-- S 主体内容 -->\n  <div class=\"o2team_ambient_main\">\n  </div>\n  <!-- E 主体内容 --><script src=\"//storage.jd.com/ambient/bundle-snow_css_repeat.js?t=1565788103000\"></script>",
-  "controlUrl": "//storage.jd.com/ambient/control-snow_css_repeat.js?t=1565788103000",
-  "configUrl": "//storage.jd.com/ambient/config-snow_css_repeat.js?t=1565788103000",
+  "demoSnippet": "<link href=\"//storage.jd.com/ambient/styles-snow_css_repeat.css?t=1566464067000\" rel=\"stylesheet\"></link><!-- S 主体内容 -->\n  <div class=\"o2team_ambient_main\">\n  </div>\n  <!-- E 主体内容 --><script src=\"//storage.jd.com/ambient/bundle-snow_css_repeat.js?t=1566464067000\"></script>",
+  "controlUrl": "//storage.jd.com/ambient/control-snow_css_repeat.js?t=1566464067000",
+  "configUrl": "//storage.jd.com/ambient/config-snow_css_repeat.js?t=1566464067000",
   "placeholderImg": "//storage.jd.com/ambient/snow-css-repeat_placeholder.png?t=1554281086000",
   "gifImg": "//storage.jd.com/ambient/snow-css-repeat_motion.gif?t=1554088280000",
   "spriteImg": "//storage.jd.com/ambient/snow-css-repeat_sprite.png?t=1554281086000"
